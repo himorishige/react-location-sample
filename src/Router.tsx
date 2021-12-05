@@ -29,7 +29,6 @@ export const routes: Route<LocationGenerics>[] = [
           import('./components/PostIndex.module').then(
             (module) => module.PostIndexModule,
           ),
-        element: <PostIndex />,
       },
       {
         path: ':postId',
