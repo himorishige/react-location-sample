@@ -1,14 +1,11 @@
-import { useEffect, useState, VFC } from 'react';
-import { Link } from 'react-location';
-import { fetchPosts } from '../lib/fetchPosts';
-import type { Post } from '../types';
+import { VFC } from 'react';
+import { Link, useMatch } from 'react-location';
+import { LocationGenerics } from '../Router';
 
 export const PostIndex: VFC = () => {
-  const [posts, setPosts] = useState<Post[] | null>([]);
-
-  useEffect(() => {
-    fetchPosts().then(setPosts);
-  }, []);
+  const {
+    data: { posts },
+  } = useMatch<LocationGenerics>();
 
   if (!posts) return null;
 
