@@ -9156,7 +9156,29 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-location@^3.2.15:
+react-location-devtools@^3.2.15:
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/react-location-devtools/-/react-location-devtools-3.2.15.tgz#59ae6e984597d84f2fb53e82f49864dba8010445"
+  integrity sha512-Q6+UBGx7U1DGFyLRlV3w0mbU6c/7klNTuleEu0pgDdrRWHjJuiP/EPH0vK0ngcjmvX/gyUwY0ivE0kxoHyEmrQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    core-js "^3.18.3"
+    fast-async "7"
+    react-location "3.2.15"
+    ts-toolbelt "^9.6.0"
+
+react-location-simple-cache@^3.2.15:
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/react-location-simple-cache/-/react-location-simple-cache-3.2.15.tgz#42875ea1873d5f088343da0cb841c1e46ecc1778"
+  integrity sha512-tNvmeOuWmXdxN7LDuq63919u6wlW5/iipYIzCUoH96yqAdsp9RvU8cFdGn0AOsgKKyeq71ceQl8yhn1jEx2K9Q==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    core-js "^3.18.3"
+    fast-async "7"
+    react-location "3.2.15"
+    ts-toolbelt "^9.6.0"
+
+react-location@3.2.15, react-location@^3.2.15:
   version "3.2.15"
   resolved "https://registry.yarnpkg.com/react-location/-/react-location-3.2.15.tgz#06c3ea9a1bcef327fcc6ca8b4849e4ab24afad2f"
   integrity sha512-i6YFBii3DRYYvcCZ5c1FAibUf5yFQxPtglsDxf/cUsZfP7TVBzBu0fh9PaHx1NEVLCJ4BhPsVDlYvwNBlVAhuA==
