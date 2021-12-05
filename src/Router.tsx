@@ -1,9 +1,7 @@
 import { Route, ReactLocation, MakeGenerics } from 'react-location';
 import { ReactLocationSimpleCache } from 'react-location-simple-cache';
 import { Home } from './components/Home';
-import { PostDetail } from './components/PostDetail';
 import { PostIndex } from './components/PostIndex';
-import { fetchPostById, fetchPosts } from './lib/fetchPosts';
 import type { Post } from './types';
 
 export type LocationGenerics = MakeGenerics<{
@@ -27,31 +25,18 @@ export const routes: Route<LocationGenerics>[] = [
     children: [
       {
         path: '/',
-        loader: routeCache.createLoader(
-          async () => {
-            return {
-              posts: await fetchPosts(),
-            };
-          },
-          {
-            policy: 'cache-and-network',
-          },
-        ),
+        import: () =>
+          import('./components/PostIndex.module').then(
+            (module) => module.PostIndexModule,
+          ),
         element: <PostIndex />,
       },
       {
         path: ':postId',
-        loader: routeCache.createLoader(
-          async ({ params }) => {
-            return {
-              post: await fetchPostById(params.postId),
-            };
-          },
-          {
-            policy: 'cache-first',
-          },
-        ),
-        element: <PostDetail />,
+        import: () =>
+          import('./components/PostDetail.module').then(
+            (module) => module.PostDetailModule,
+          ),
       },
     ],
   },
