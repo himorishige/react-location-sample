@@ -9,7 +9,10 @@ export const PostDetailModule: Route<LocationGenerics> = {
         post: await fetchPostById(params.postId),
       };
     },
-    { policy: 'cache-first' },
+    {
+      policy: 'cache-first',
+      maxAge: 1000 * 60, // キャッシュを利用する時間を60秒に
+    },
   ),
   element: () => import('./PostDetail').then((module) => <module.PostDetail />),
 };
